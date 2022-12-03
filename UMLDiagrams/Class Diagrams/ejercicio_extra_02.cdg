@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ejercicio_extra_02">
+  <ClassDiagramComponents>
+    <Class name="Cine" package="" visibility="public" xPosition="520.0" yPosition="52.0">
+      <Fields>
+        <Field name="peliActual" type="Pelicula" visibility="private"/>
+        <Field name="sala" type="Asiento[][]" visibility="private"/>
+        <Field name="precioEntrada" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearSala" returnType="Asiento[][]" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="" visibility="public" xPosition="122.0" yPosition="28.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="String[]" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pelicula" package="" visibility="public" xPosition="881.0" yPosition="52.0">
+      <Fields>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="duracion" type="double" visibility="private"/>
+        <Field name="edadMinima" type="int" visibility="private"/>
+        <Field name="duracion" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Espectador" package="" visibility="public" xPosition="122.0" yPosition="145.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+        <Field name="dineroDisponible" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="tieneDinero" returnType="boolean" visibility="public">
+          <Argument type="double" name="precioEntrada"/>
+        </Method>
+        <Method name="tieneEdad" returnType="boolean" visibility="public">
+          <Argument type="int" name="edad"/>
+        </Method>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="int" name="edad"/>
+        </Method>
+        <Method name="getEdad" returnType="int" visibility="public"/>
+        <Method name="setDineroDisponible" returnType="void" visibility="public">
+          <Argument type="double" name="dineroDisponible"/>
+        </Method>
+        <Method name="toString" returnType="void" visibility="public"/>
+        <Method name="getDineroDisponible" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Asiento" package="" visibility="public" xPosition="476.0" yPosition="240.0">
+      <Fields>
+        <Field name="letra" type="char" visibility="private"/>
+        <Field name="numero" type="int" visibility="private"/>
+        <Field name="ocupado" type="boolean" visibility="private"/>
+        <Field name="espectador" type="Espectador" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="estaOcupado" returnType="boolean" visibility="public">
+          <Argument type="Asiento" name="asiento"/>
+        </Method>
+        <Method name="ubicarPersona" returnType="boolean" visibility="public">
+          <Argument type="Espectador" name="p1"/>
+          <Argument type="Asiento" name="asiento"/>
+        </Method>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="asientos" source="Cine" target="Asiento" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="espectador" source="Asiento" target="Espectador" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..1"/>
+    <HasRelation name="pelicula" source="Cine" target="Pelicula" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
